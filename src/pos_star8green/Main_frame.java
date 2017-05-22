@@ -120,6 +120,7 @@ public class Main_frame extends javax.swing.JFrame  {
 
         singleJourney_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/singleJourney_button.png"))); // NOI18N
         singleJourney_button.setBorder(null);
+        singleJourney_button.setBorderPainted(false);
         singleJourney_button.setFocusable(false);
         singleJourney_button.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/singleJourney_button_click.png"))); // NOI18N
         singleJourney_button.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/singleJourney_button_hover.png"))); // NOI18N
