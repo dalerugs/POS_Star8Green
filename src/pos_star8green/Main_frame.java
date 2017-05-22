@@ -42,7 +42,7 @@ public class Main_frame extends javax.swing.JFrame  {
         sysTime_label.setText(dtf.format(now));
         system_time.start();
         
-        Image image = new ImageIcon(this.getClass().getResource("/Images/main_frame_header.png")).getImage().getScaledInstance(header_label.getWidth(), header_label.getHeight(), Image.SCALE_SMOOTH);
+        Image image = new ImageIcon(this.getClass().getResource("/Images/main_frame_header.PNG")).getImage().getScaledInstance(header_label.getWidth(), header_label.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon header = new ImageIcon(image);
         header_label.setIcon(header);
         
