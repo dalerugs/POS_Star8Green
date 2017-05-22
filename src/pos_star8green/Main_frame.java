@@ -42,7 +42,7 @@ public class Main_frame extends javax.swing.JFrame  {
         sysTime_label.setText(dtf.format(now));
         system_time.start();
         
-        Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/main_frame_header.png")).getScaledInstance(header_label.getWidth(), header_label.getHeight(), Image.SCALE_SMOOTH);
+        Image image = new ImageIcon(this.getClass().getResource("/Images/main_frame_header.png")).getImage().getScaledInstance(header_label.getWidth(), header_label.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon header = new ImageIcon(image);
         header_label.setIcon(header);
         
@@ -330,9 +330,25 @@ public class Main_frame extends javax.swing.JFrame  {
         if(evt.getKeyCode()==KeyEvent.VK_F2){
                load_button.doClick();
            }
+        if(evt.getKeyCode()==KeyEvent.VK_F3){
+               button1.doClick();
+           }
+        if(evt.getKeyCode()==KeyEvent.VK_F4){
+               button2.doClick();
+           }
+        if(evt.getKeyCode()==KeyEvent.VK_F5){
+               button3.doClick();
+           }
+        if(evt.getKeyCode()==KeyEvent.VK_F6){
+               button4.doClick();
+           }
+        if(evt.getKeyCode()==KeyEvent.VK_F7){
+               button5.doClick();
+           }
         if(evt.getKeyCode()==KeyEvent.VK_F8){
                logout_button.doClick();
            }
+        
         
     }//GEN-LAST:event_formKeyPressed
 

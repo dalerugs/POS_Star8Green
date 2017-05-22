@@ -32,8 +32,6 @@ public class Login_frame extends javax.swing.JFrame {
     }
     
     private void initialize(){
-//        JLabel label = new JLabel(new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("../Images/star8green_icon.png"))));
-//        setContentPane(label);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         this.setIconImage(new ImageIcon(this.getClass().getResource("/Images/star8green_icon.png")).getImage());
