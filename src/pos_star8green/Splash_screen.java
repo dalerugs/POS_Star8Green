@@ -8,9 +8,7 @@ package pos_star8green;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.Timer;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -31,7 +29,7 @@ public class Splash_screen extends javax.swing.JFrame {
     private void initialize(){
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("../Images/star8green_icon.png")));
+        this.setIconImage(new ImageIcon(this.getClass().getResource("/Images/star8green_icon.png")).getImage());
         this.getContentPane().setBackground(Color.WHITE);
     }
 

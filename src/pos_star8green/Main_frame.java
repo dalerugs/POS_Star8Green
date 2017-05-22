@@ -32,7 +32,7 @@ public class Main_frame extends javax.swing.JFrame  {
     }
     
     private void initialize(){
-        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("../Images/star8green_icon.png")));
+        this.setIconImage(new ImageIcon(this.getClass().getResource("/Images/star8green_icon.png")).getImage());
         Toolkit tk = Toolkit.getDefaultToolkit();
         int Xsize=(int)tk.getScreenSize().getWidth();
         int Ysize=(int)tk.getScreenSize().getHeight();
@@ -42,7 +42,7 @@ public class Main_frame extends javax.swing.JFrame  {
         sysTime_label.setText(dtf.format(now));
         system_time.start();
         
-        Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("../Images/main_frame_header.png")).getScaledInstance(header_label.getWidth(), header_label.getHeight(), Image.SCALE_SMOOTH);
+        Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/Images/main_frame_header.png")).getScaledInstance(header_label.getWidth(), header_label.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon header = new ImageIcon(image);
         header_label.setIcon(header);
         
@@ -287,7 +287,7 @@ public class Main_frame extends javax.swing.JFrame  {
                             .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(logout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
