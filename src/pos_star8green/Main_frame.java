@@ -7,6 +7,8 @@ package pos_star8green;
 
 import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -46,6 +48,11 @@ public class Main_frame extends javax.swing.JFrame  {
         ImageIcon header = new ImageIcon(image);
         header_label.setIcon(header);
         
+        ncd = new No_card_detected();
+        main_panel.setLayout(layout);
+        main_panel.add(ncd);
+        ncd.setVisible(true);
+        
     }
     
     public void deselect_button(){
@@ -73,7 +80,7 @@ public class Main_frame extends javax.swing.JFrame  {
         sysTime_label = new javax.swing.JLabel();
         header_label = new javax.swing.JLabel();
         singleJourney_button = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        main_panel = new javax.swing.JPanel();
         logout_button = new javax.swing.JButton();
         button1 = new javax.swing.JButton();
         button3 = new javax.swing.JButton();
@@ -138,14 +145,14 @@ public class Main_frame extends javax.swing.JFrame  {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout main_panelLayout = new javax.swing.GroupLayout(main_panel);
+        main_panel.setLayout(main_panelLayout);
+        main_panelLayout.setHorizontalGroup(
+            main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 983, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        main_panelLayout.setVerticalGroup(
+            main_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 578, Short.MAX_VALUE)
         );
 
@@ -287,7 +294,7 @@ public class Main_frame extends javax.swing.JFrame  {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(logout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(main_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -314,7 +321,7 @@ public class Main_frame extends javax.swing.JFrame  {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(logout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(main_panel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sysTime_label2)
@@ -455,15 +462,17 @@ public class Main_frame extends javax.swing.JFrame  {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton load_button;
     private javax.swing.JButton logout_button;
+    private javax.swing.JPanel main_panel;
     private javax.swing.JButton singleJourney_button;
     private javax.swing.JLabel sysTime_label;
     private javax.swing.JLabel sysTime_label1;
     private javax.swing.JLabel sysTime_label2;
     // End of variables declaration//GEN-END:variables
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMM d, u | H:mm:ss a");
+    GridBagLayout layout = new GridBagLayout();
+    No_card_detected ncd;
 }
 
 
