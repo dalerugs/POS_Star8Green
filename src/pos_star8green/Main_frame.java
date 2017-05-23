@@ -121,6 +121,8 @@ public class Main_frame extends javax.swing.JFrame  {
         singleJourney_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/singleJourney_button.png"))); // NOI18N
         singleJourney_button.setBorder(null);
         singleJourney_button.setBorderPainted(false);
+        singleJourney_button.setContentAreaFilled(false);
+        singleJourney_button.setFocusPainted(false);
         singleJourney_button.setFocusable(false);
         singleJourney_button.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/singleJourney_button_click.png"))); // NOI18N
         singleJourney_button.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/singleJourney_button_hover.png"))); // NOI18N
@@ -149,6 +151,9 @@ public class Main_frame extends javax.swing.JFrame  {
 
         logout_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout_button.PNG"))); // NOI18N
         logout_button.setBorder(null);
+        logout_button.setBorderPainted(false);
+        logout_button.setContentAreaFilled(false);
+        logout_button.setFocusPainted(false);
         logout_button.setFocusable(false);
         logout_button.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout_button_click.PNG"))); // NOI18N
         logout_button.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logout_button_hover.png"))); // NOI18N
@@ -160,6 +165,9 @@ public class Main_frame extends javax.swing.JFrame  {
 
         button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button.png"))); // NOI18N
         button1.setBorder(null);
+        button1.setBorderPainted(false);
+        button1.setContentAreaFilled(false);
+        button1.setFocusPainted(false);
         button1.setFocusable(false);
         button1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_click.png"))); // NOI18N
         button1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_hover.png"))); // NOI18N
@@ -172,6 +180,9 @@ public class Main_frame extends javax.swing.JFrame  {
 
         button3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button.png"))); // NOI18N
         button3.setBorder(null);
+        button3.setBorderPainted(false);
+        button3.setContentAreaFilled(false);
+        button3.setFocusPainted(false);
         button3.setFocusable(false);
         button3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_click.png"))); // NOI18N
         button3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_hover.png"))); // NOI18N
@@ -184,6 +195,9 @@ public class Main_frame extends javax.swing.JFrame  {
 
         button5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button.png"))); // NOI18N
         button5.setBorder(null);
+        button5.setBorderPainted(false);
+        button5.setContentAreaFilled(false);
+        button5.setFocusPainted(false);
         button5.setFocusable(false);
         button5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_click.png"))); // NOI18N
         button5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_hover.png"))); // NOI18N
@@ -195,6 +209,10 @@ public class Main_frame extends javax.swing.JFrame  {
         });
 
         button4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button.png"))); // NOI18N
+        button4.setBorder(null);
+        button4.setBorderPainted(false);
+        button4.setContentAreaFilled(false);
+        button4.setFocusPainted(false);
         button4.setFocusable(false);
         button4.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_click.png"))); // NOI18N
         button4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_hover.png"))); // NOI18N
@@ -207,6 +225,9 @@ public class Main_frame extends javax.swing.JFrame  {
 
         button2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button.png"))); // NOI18N
         button2.setBorder(null);
+        button2.setBorderPainted(false);
+        button2.setContentAreaFilled(false);
+        button2.setFocusPainted(false);
         button2.setFocusable(false);
         button2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_click.png"))); // NOI18N
         button2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_hover.png"))); // NOI18N
@@ -219,6 +240,9 @@ public class Main_frame extends javax.swing.JFrame  {
 
         load_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/load_button.png"))); // NOI18N
         load_button.setBorder(null);
+        load_button.setBorderPainted(false);
+        load_button.setContentAreaFilled(false);
+        load_button.setFocusPainted(false);
         load_button.setFocusable(false);
         load_button.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/load_button_click.png"))); // NOI18N
         load_button.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/load_button_hover.png"))); // NOI18N
@@ -439,7 +463,7 @@ public class Main_frame extends javax.swing.JFrame  {
     private javax.swing.JLabel sysTime_label1;
     private javax.swing.JLabel sysTime_label2;
     // End of variables declaration//GEN-END:variables
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMM d, u | H:mm:ss a");
 }
 
 
