@@ -59,11 +59,14 @@ public class Main_frame extends javax.swing.JFrame  {
 //        Set Panels
         NCD_error = new No_card_detected();
         IC_error = new Invalid_card();
+        SJ_panel = new Single_journey();
         main_panel.setLayout(layout);
         main_panel.add(NCD_error);
         main_panel.add(IC_error);
+        main_panel.add(SJ_panel);
         NCD_error.setVisible(true);
         IC_error.setVisible(false);
+        SJ_panel.setVisible(false);
         
         
     }
@@ -351,6 +354,7 @@ public class Main_frame extends javax.swing.JFrame  {
         button4.setSelected(true);
         NCD_error.setVisible(true);
         IC_error.setVisible(false);
+        SJ_panel.setVisible(false);
     }//GEN-LAST:event_button4ActionPerformed
 
     private void logout_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_buttonActionPerformed
@@ -365,6 +369,9 @@ public class Main_frame extends javax.swing.JFrame  {
     private void singleJourney_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singleJourney_buttonActionPerformed
         deselect_button();
         singleJourney_button.setSelected(true);
+        SJ_panel.setVisible(true);
+        NCD_error.setVisible(false);
+        IC_error.setVisible(false);
         
     }//GEN-LAST:event_singleJourney_buttonActionPerformed
 
@@ -425,6 +432,7 @@ public class Main_frame extends javax.swing.JFrame  {
         button5.setSelected(true);
         NCD_error.setVisible(false);
         IC_error.setVisible(true);
+        SJ_panel.setVisible(false);
     }//GEN-LAST:event_button5ActionPerformed
 
     /**
@@ -493,6 +501,7 @@ public class Main_frame extends javax.swing.JFrame  {
     GridBagLayout layout = new GridBagLayout();
     No_card_detected NCD_error;
     Invalid_card IC_error;
+    Single_journey SJ_panel;
 }
 
 
