@@ -57,9 +57,6 @@ public class Main_frame extends javax.swing.JFrame  {
         header_label.setIcon(header);
         
 //        Set Panels
-        NCD_error = new No_card_detected();
-        IC_error = new Invalid_card();
-        SJ_panel = new Single_journey();
         main_panel.setLayout(layout);
         main_panel.add(NCD_error);
         main_panel.add(IC_error);
@@ -129,7 +126,7 @@ public class Main_frame extends javax.swing.JFrame  {
         sysTime_label1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         sysTime_label2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        sysTime_label2.setText("F1 - Single Journey | \nF2 - Load | \nF3 - Button1 | \nF4 - Button2 | \nF5 - Button3 | \nF6 - Button4 | \nF7 - Button5 | \nF8 - Logout | ");
+        sysTime_label2.setText("F1 - Single Journey | \nF2 - Load | \nF3 - Button1 | \nF4 - Button2 | \nF5 - Button3 | \nF6 - Button4 | \nF7 - Button5 | \nF8 - Logout");
         sysTime_label2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         sysTime_label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -499,9 +496,9 @@ public class Main_frame extends javax.swing.JFrame  {
     // End of variables declaration//GEN-END:variables
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMM d, u | H:mm:ss a");
     GridBagLayout layout = new GridBagLayout();
-    No_card_detected NCD_error;
-    Invalid_card IC_error;
-    Single_journey SJ_panel;
+    No_card_detected NCD_error = new No_card_detected();
+    Invalid_card IC_error = new Invalid_card();
+    Single_journey SJ_panel = new Single_journey() ;
 }
 
 
