@@ -62,7 +62,7 @@ public class Main_frame extends javax.swing.JFrame  {
         main_panel.setLayout(layout);
         main_panel.add(NCD_error);
         main_panel.add(IC_error);
-        NCD_error.setVisible(false);
+        NCD_error.setVisible(true);
         IC_error.setVisible(false);
         
         
@@ -126,7 +126,7 @@ public class Main_frame extends javax.swing.JFrame  {
         sysTime_label1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         sysTime_label2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        sysTime_label2.setText("System Status Here");
+        sysTime_label2.setText("F1 - Single Journey | \nF2 - Load | \nF3 - Button1 | \nF4 - Button2 | \nF5 - Button3 | \nF6 - Button4 | \nF7 - Button5 | \nF8 - Logout | ");
         sysTime_label2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         sysTime_label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -349,9 +349,12 @@ public class Main_frame extends javax.swing.JFrame  {
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         deselect_button();
         button4.setSelected(true);
+        NCD_error.setVisible(true);
+        IC_error.setVisible(false);
     }//GEN-LAST:event_button4ActionPerformed
 
     private void logout_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_buttonActionPerformed
+        deselect_button();
         int confirm=JOptionPane.showConfirmDialog(this,"Are you sure you want to logout?","Warning",JOptionPane.WARNING_MESSAGE);
         if(confirm==JOptionPane.YES_OPTION){
             this.dispose();
@@ -420,6 +423,8 @@ public class Main_frame extends javax.swing.JFrame  {
     private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
         deselect_button();
         button5.setSelected(true);
+        NCD_error.setVisible(false);
+        IC_error.setVisible(true);
     }//GEN-LAST:event_button5ActionPerformed
 
     /**
