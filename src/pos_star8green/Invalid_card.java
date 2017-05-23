@@ -9,12 +9,12 @@ package pos_star8green;
  *
  * @author Patrick Dale
  */
-public class No_card_detected extends javax.swing.JPanel {
+public class Invalid_card extends javax.swing.JPanel {
 
     /**
-     * Creates new form No_card_detected
+     * Creates new form Invalid_card
      */
-    public No_card_detected() {
+    public Invalid_card() {
         initComponents();
     }
 
@@ -34,7 +34,7 @@ public class No_card_detected extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(177, 53, 53));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("No Card Detected");
+        jLabel1.setText("Invalid Card");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

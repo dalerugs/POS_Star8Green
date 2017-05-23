@@ -6,8 +6,7 @@
 package pos_star8green;
 
 import com.sun.glass.events.KeyEvent;
-import java.awt.Color;
-import java.awt.GridBagConstraints;
+import java.awt.Color;;
 import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -33,28 +32,43 @@ public class Main_frame extends javax.swing.JFrame  {
         initialize();
     }
     
+    
     private void initialize(){
+        
         this.setIconImage(new ImageIcon(this.getClass().getResource("/Images/star8green_icon.png")).getImage());
+        
+//        Make the frame fullscreen
         Toolkit tk = Toolkit.getDefaultToolkit();
         int Xsize=(int)tk.getScreenSize().getWidth();
         int Ysize=(int)tk.getScreenSize().getHeight();
         this.setSize(Xsize,Ysize);
+        
+//        Set background color to white
         this.getContentPane().setBackground(Color.WHITE);
+        
+//        Start System Time
         LocalDateTime now = LocalDateTime.now();
         sysTime_label.setText(dtf.format(now));
         system_time.start();
         
+//        Resize Header Image
         Image image = new ImageIcon(this.getClass().getResource("/Images/main_frame_header.PNG")).getImage().getScaledInstance(header_label.getWidth(), header_label.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon header = new ImageIcon(image);
         header_label.setIcon(header);
         
-        ncd = new No_card_detected();
+//        Set Panels
+        NCD_error = new No_card_detected();
+        IC_error = new Invalid_card();
         main_panel.setLayout(layout);
-        main_panel.add(ncd);
-        ncd.setVisible(true);
+        main_panel.add(NCD_error);
+        main_panel.add(IC_error);
+        NCD_error.setVisible(false);
+        IC_error.setVisible(false);
+        
         
     }
     
+//    Deselect All Buttons
     public void deselect_button(){
         singleJourney_button.setSelected(false);
         load_button.setSelected(false);
@@ -348,12 +362,14 @@ public class Main_frame extends javax.swing.JFrame  {
     private void singleJourney_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singleJourney_buttonActionPerformed
         deselect_button();
         singleJourney_button.setSelected(true);
+        
     }//GEN-LAST:event_singleJourney_buttonActionPerformed
 
     private void singleJourney_buttonKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_singleJourney_buttonKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_singleJourney_buttonKeyPressed
 
+//    Buttons Hotkeys
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         if(evt.getKeyCode()==KeyEvent.VK_F1){
                singleJourney_button.doClick();
@@ -379,8 +395,6 @@ public class Main_frame extends javax.swing.JFrame  {
         if(evt.getKeyCode()==KeyEvent.VK_F8){
                logout_button.doClick();
            }
-        
-        
     }//GEN-LAST:event_formKeyPressed
 
     private void load_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_load_buttonActionPerformed
@@ -472,7 +486,8 @@ public class Main_frame extends javax.swing.JFrame  {
     // End of variables declaration//GEN-END:variables
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMM d, u | H:mm:ss a");
     GridBagLayout layout = new GridBagLayout();
-    No_card_detected ncd;
+    No_card_detected NCD_error;
+    Invalid_card IC_error;
 }
 
 

@@ -48,7 +48,7 @@
           <Color blue="35" green="35" red="b1" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="No Card Detected"/>
+        <Property name="text" type="java.lang.String" value="Invalid Card"/>
       </Properties>
     </Component>
   </SubComponents>
