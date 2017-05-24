@@ -5,6 +5,8 @@
  */
 package pos_star8green;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Patrick Dale
@@ -33,9 +35,7 @@ public class Single_journey extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         destination_comboBox = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         recievedCash_textField = new javax.swing.JTextField();
-        otherAmount_textField = new javax.swing.JTextField();
         reciept_panel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         recieved_cash = new javax.swing.JLabel();
@@ -43,8 +43,8 @@ public class Single_journey extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         total = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        cancel_button = new javax.swing.JButton();
+        confirm_button = new javax.swing.JButton();
         ok_button = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(983, 578));
@@ -57,22 +57,18 @@ public class Single_journey extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(52, 52, 52));
         jLabel2.setText("Select Destination:");
 
+        destination_comboBox.setBackground(new java.awt.Color(255, 255, 255));
         destination_comboBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         destination_comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destination 1", "Destination 2", "Destination 3", "Destination 4", "Destination 5", "Destination 6" }));
+        destination_comboBox.setBorder(null);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(52, 52, 52));
         jLabel3.setText("Recieved Cash:");
         jLabel3.setToolTipText("");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(52, 52, 52));
-        jLabel4.setText("Other Amount:");
-        jLabel4.setToolTipText("");
-
         recievedCash_textField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        otherAmount_textField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        recievedCash_textField.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
 
         reciept_panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -100,17 +96,27 @@ public class Single_journey extends javax.swing.JPanel {
         total.setForeground(new java.awt.Color(52, 52, 52));
         total.setText("70.00");
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_cancel_button.PNG"))); // NOI18N
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_cancel_button_click.PNG"))); // NOI18N
-        jButton5.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_cancel_button_hover.PNG"))); // NOI18N
+        cancel_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_cancel_button.PNG"))); // NOI18N
+        cancel_button.setBorder(null);
+        cancel_button.setBorderPainted(false);
+        cancel_button.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_cancel_button_click.PNG"))); // NOI18N
+        cancel_button.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_cancel_button_hover.PNG"))); // NOI18N
+        cancel_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancel_buttonActionPerformed(evt);
+            }
+        });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_confirml_button.PNG"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_confirml_button_click.PNG"))); // NOI18N
-        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_confirml_button_hover.PNG"))); // NOI18N
+        confirm_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_confirml_button.PNG"))); // NOI18N
+        confirm_button.setBorder(null);
+        confirm_button.setBorderPainted(false);
+        confirm_button.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_confirml_button_click.PNG"))); // NOI18N
+        confirm_button.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_confirml_button_hover.PNG"))); // NOI18N
+        confirm_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm_buttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout reciept_panelLayout = new javax.swing.GroupLayout(reciept_panel);
         reciept_panel.setLayout(reciept_panelLayout);
@@ -120,9 +126,9 @@ public class Single_journey extends javax.swing.JPanel {
                 .addGap(72, 72, 72)
                 .addGroup(reciept_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(reciept_panelLayout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cancel_button, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(reciept_panelLayout.createSequentialGroup()
                         .addGroup(reciept_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
@@ -154,8 +160,8 @@ public class Single_journey extends javax.swing.JPanel {
                         .addComponent(change, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(reciept_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cancel_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -174,81 +180,103 @@ public class Single_journey extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(316, Short.MAX_VALUE)
+                .addComponent(reciept_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(262, 262, 262))
             .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
+                        .addGap(423, 423, 423)
+                        .addComponent(ok_button))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(30, 30, 30)
                                 .addComponent(jLabel2)
                                 .addGap(6, 6, 6)
                                 .addComponent(destination_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel4)
-                                .addGap(6, 6, 6)
-                                .addComponent(otherAmount_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(35, 35, 35)
-                                .addComponent(jLabel3)
-                                .addGap(6, 6, 6)
-                                .addComponent(recievedCash_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(393, 393, 393)
-                                .addComponent(ok_button))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(203, 203, 203)
-                                .addComponent(reciept_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel1)))
-                .addGap(247, 247, 247))
+                            .addComponent(jLabel1))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(6, 6, 6)
+                            .addComponent(recievedCash_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(destination_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(otherAmount_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(recievedCash_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addComponent(ok_button)
-                .addGap(28, 28, 28)
+                .addGap(44, 44, 44)
                 .addComponent(reciept_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void ok_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ok_buttonActionPerformed
-        reciept_panel.setVisible(true);
+        boolean isError=false;
+        float recieved_cash;
+        if(recievedCash_textField.getText().isEmpty()){
+            isError=true;
+            JOptionPane.showMessageDialog(this, "Please enter recieved cash.","Error",JOptionPane.ERROR_MESSAGE);
+        }else{
+            try{
+            recieved_cash = Float.parseFloat(recievedCash_textField.getText());
+            }catch(NumberFormatException e){
+                isError=true;
+                JOptionPane.showMessageDialog(this, "Please enter cash value only.","Error",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        
+        
+        if(!isError){
+            destination_comboBox.setEnabled(false);
+            recievedCash_textField.setEnabled(false);
+            ok_button.setEnabled(false);
+            reciept_panel.setVisible(true);
+        }
     }//GEN-LAST:event_ok_buttonActionPerformed
+
+    private void confirm_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_buttonActionPerformed
+        reciept_panel.setVisible(false);
+        recievedCash_textField.setText("");
+        destination_comboBox.setSelectedIndex(0);
+    }//GEN-LAST:event_confirm_buttonActionPerformed
+
+    private void cancel_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel_buttonActionPerformed
+        reciept_panel.setVisible(false);
+        destination_comboBox.setEnabled(true);
+        recievedCash_textField.setEnabled(true);
+        ok_button.setEnabled(true);
+    }//GEN-LAST:event_cancel_buttonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cancel_button;
     private javax.swing.JLabel change;
+    private javax.swing.JButton confirm_button;
     private javax.swing.JComboBox<String> destination_comboBox;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JButton ok_button;
-    private javax.swing.JTextField otherAmount_textField;
     private javax.swing.JPanel reciept_panel;
     private javax.swing.JTextField recievedCash_textField;
     private javax.swing.JLabel recieved_cash;
