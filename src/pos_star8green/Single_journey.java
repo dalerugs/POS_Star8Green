@@ -64,8 +64,8 @@ public class Single_journey extends javax.swing.JPanel {
 
         destination_comboBox.setBackground(new java.awt.Color(255, 255, 255));
         destination_comboBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        destination_comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destination 1", "Destination 2", "Destination 3", "Destination 4", "Destination 5", "Destination 6" }));
         destination_comboBox.setBorder(null);
+        destination_comboBox.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         destination_comboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 destination_comboBoxItemStateChanged(evt);
@@ -77,7 +77,7 @@ public class Single_journey extends javax.swing.JPanel {
         jLabel3.setText("Recieved Cash:");
         jLabel3.setToolTipText("");
 
-        recievedCash_textField.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        recievedCash_textField.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         recievedCash_textField.setHorizontalAlignment(javax.swing.JTextField.TRAILING);
 
         reciept_panel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -248,34 +248,44 @@ public class Single_journey extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void getDestFare(){
-        arrDestFare[0][0]="Destination 1";arrDestFare[0][1]="15.00";
+        arrDestFare[0][0]="..";arrDestFare[0][1]="";
         arrDestFare[1][0]="Destination 1";arrDestFare[1][1]="15.00";
-        arrDestFare[2][0]="Destination 1";arrDestFare[2][1]="20.00";
-        arrDestFare[3][0]="Destination 1";arrDestFare[3][1]="20.00";
-        arrDestFare[4][0]="Destination 1";arrDestFare[4][1]="25.00";
-        arrDestFare[5][0]="Destination 1";arrDestFare[5][1]="30.00";
+        arrDestFare[2][0]="Destination 2";arrDestFare[2][1]="15.00";
+        arrDestFare[3][0]="Destination 3";arrDestFare[3][1]="20.00";
+        arrDestFare[4][0]="Destination 4";arrDestFare[4][1]="20.00";
+        arrDestFare[5][0]="Destination 5";arrDestFare[5][1]="25.00";
+        arrDestFare[6][0]="Destination 6";arrDestFare[6][1]="30.00";
+        
+        for (String[] arrDestFare1 : arrDestFare) {
+            destination_comboBox.addItem(arrDestFare1[0]);
+        }
+        
+        
     }
     
     
     private void ok_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ok_buttonActionPerformed
         boolean isError=false;
         float recieved_cash=0;
-        float total;
-        if(recievedCash_textField.getText().isEmpty()){
+        if(recievedCash_textField.getText().isEmpty() || destination_comboBox.getSelectedItem()==".."){
             isError=true;
-            JOptionPane.showMessageDialog(this, "Please enter recieved cash.","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter all fields.","Error",JOptionPane.ERROR_MESSAGE);
+        }else if(Float.parseFloat(arrDestFare[destination_comboBox.getSelectedIndex()][1])>Float.parseFloat(recievedCash_textField.getText())){
+            isError=true;
+            JOptionPane.showMessageDialog(this, "Insufficient Cash.","Error",JOptionPane.ERROR_MESSAGE);
         }else{
             try{
             recieved_cash = Float.parseFloat(recievedCash_textField.getText());
             }catch(NumberFormatException e){
                 isError=true;
                 JOptionPane.showMessageDialog(this, "Please enter cash value only.","Error",JOptionPane.ERROR_MESSAGE);
+                recievedCash_textField.setText("");
             }
         }
         
         
         if(!isError){
-            total=Float.parseFloat(arrDestFare[destination_comboBox.getSelectedIndex()][1]);
+            float total=Float.parseFloat(arrDestFare[destination_comboBox.getSelectedIndex()][1]);
             float change=recieved_cash-total;
             total_label.setText(""+total);
             recievedCash_label.setText(""+recieved_cash);
@@ -290,10 +300,11 @@ public class Single_journey extends javax.swing.JPanel {
     private void confirm_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_buttonActionPerformed
         reciept_panel.setVisible(false);
         recievedCash_textField.setText("");
-        destination_comboBox.setSelectedIndex(0);
         fare_label.setText("");
+        destination_comboBox.setEnabled(true);
         recievedCash_textField.setEnabled(true);
         ok_button.setEnabled(true);
+        destination_comboBox.setSelectedIndex(0);
     }//GEN-LAST:event_confirm_buttonActionPerformed
 
     private void cancel_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel_buttonActionPerformed
@@ -328,5 +339,5 @@ public class Single_journey extends javax.swing.JPanel {
     private javax.swing.JTextField recievedCash_textField;
     private javax.swing.JLabel total_label;
     // End of variables declaration//GEN-END:variables
-    String[][] arrDestFare = new String[6][2];
+    String[][] arrDestFare = new String[7][2];
 }

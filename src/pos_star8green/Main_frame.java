@@ -61,15 +61,15 @@ public class Main_frame extends javax.swing.JFrame  {
         main_panel.add(NCD_error);
         main_panel.add(IC_error);
         main_panel.add(SJ_panel);
+        main_panel.add(LC_panel);
         NCD_error.setVisible(true);
         IC_error.setVisible(false);
         SJ_panel.setVisible(false);
-        
-        
+        LC_panel.setVisible(false);
     }
     
 //    Deselect All Buttons
-    public void deselect_button(){
+    private void deselect_button(){
         singleJourney_button.setSelected(false);
         load_button.setSelected(false);
         button1.setSelected(false);
@@ -77,6 +77,13 @@ public class Main_frame extends javax.swing.JFrame  {
         button3.setSelected(false);
         button4.setSelected(false);
         button5.setSelected(false);
+    }
+    
+    private void hide_panels(){
+        SJ_panel.setVisible(false);
+        LC_panel.setVisible(false);
+        NCD_error.setVisible(false);
+        IC_error.setVisible(false);
     }
     
     
@@ -349,9 +356,6 @@ public class Main_frame extends javax.swing.JFrame  {
     private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
         deselect_button();
         button4.setSelected(true);
-        NCD_error.setVisible(true);
-        IC_error.setVisible(false);
-        SJ_panel.setVisible(false);
     }//GEN-LAST:event_button4ActionPerformed
 
     private void logout_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_buttonActionPerformed
@@ -366,9 +370,8 @@ public class Main_frame extends javax.swing.JFrame  {
     private void singleJourney_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singleJourney_buttonActionPerformed
         deselect_button();
         singleJourney_button.setSelected(true);
+        hide_panels();
         SJ_panel.setVisible(true);
-        NCD_error.setVisible(false);
-        IC_error.setVisible(false);
         
     }//GEN-LAST:event_singleJourney_buttonActionPerformed
 
@@ -407,6 +410,8 @@ public class Main_frame extends javax.swing.JFrame  {
     private void load_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_load_buttonActionPerformed
         deselect_button();
         load_button.setSelected(true);
+        hide_panels();
+        LC_panel.setVisible(true);
     }//GEN-LAST:event_load_buttonActionPerformed
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -427,9 +432,6 @@ public class Main_frame extends javax.swing.JFrame  {
     private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
         deselect_button();
         button5.setSelected(true);
-        NCD_error.setVisible(false);
-        IC_error.setVisible(true);
-        SJ_panel.setVisible(false);
     }//GEN-LAST:event_button5ActionPerformed
 
     /**
@@ -498,7 +500,8 @@ public class Main_frame extends javax.swing.JFrame  {
     GridBagLayout layout = new GridBagLayout();
     No_card_detected NCD_error = new No_card_detected();
     Invalid_card IC_error = new Invalid_card();
-    Single_journey SJ_panel = new Single_journey() ;
+    Single_journey SJ_panel = new Single_journey();
+    Load_card LC_panel = new Load_card();
     
 }
 
