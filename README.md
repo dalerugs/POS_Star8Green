@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# star8epayment
-=======
-# POS_Star8Green
->>>>>>> c1eb60c83c012d09491a0f5292efddb459f95a92
+Star 8 Green POS Cashier Terminal
+
+#This is a testing version
