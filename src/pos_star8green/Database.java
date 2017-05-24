@@ -23,10 +23,6 @@ public class Database {
         String query="SELECT * FROM users WHERE username='"+username+"' AND password='"+password+"'";
         ResultSet rs=DriverManager.getConnection(dburl,dbuser,dbpass).createStatement().executeQuery(query);
         rs.last();
-        if(rs.getRow()>0){
-            return true;
-        }else{
-            return false;
-        }
+        return rs.getRow()>0;
     }
 }
