@@ -23,7 +23,7 @@ import javax.swing.Timer;
  * @author Patrick Dale
  */
 public class Main_frame extends javax.swing.JFrame  {
-
+    
     /**
      * Creates new form main_frame
      */
@@ -72,8 +72,8 @@ public class Main_frame extends javax.swing.JFrame  {
     private void deselect_button(){
         singleJourney_button.setSelected(false);
         load_button.setSelected(false);
-        button1.setSelected(false);
-        button2.setSelected(false);
+        registerCard_button.setSelected(false);
+        cardDetails_button.setSelected(false);
         button3.setSelected(false);
         button4.setSelected(false);
         button5.setSelected(false);
@@ -103,11 +103,11 @@ public class Main_frame extends javax.swing.JFrame  {
         singleJourney_button = new javax.swing.JButton();
         main_panel = new javax.swing.JPanel();
         logout_button = new javax.swing.JButton();
-        button1 = new javax.swing.JButton();
+        registerCard_button = new javax.swing.JButton();
         button3 = new javax.swing.JButton();
         button5 = new javax.swing.JButton();
         button4 = new javax.swing.JButton();
-        button2 = new javax.swing.JButton();
+        cardDetails_button = new javax.swing.JButton();
         load_button = new javax.swing.JButton();
 
         jMenu4.setText("jMenu4");
@@ -191,18 +191,18 @@ public class Main_frame extends javax.swing.JFrame  {
             }
         });
 
-        button1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button.png"))); // NOI18N
-        button1.setBorder(null);
-        button1.setBorderPainted(false);
-        button1.setContentAreaFilled(false);
-        button1.setFocusPainted(false);
-        button1.setFocusable(false);
-        button1.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_click.png"))); // NOI18N
-        button1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_hover.png"))); // NOI18N
-        button1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_selected.png"))); // NOI18N
-        button1.addActionListener(new java.awt.event.ActionListener() {
+        registerCard_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/registerCard_button.png"))); // NOI18N
+        registerCard_button.setBorder(null);
+        registerCard_button.setBorderPainted(false);
+        registerCard_button.setContentAreaFilled(false);
+        registerCard_button.setFocusPainted(false);
+        registerCard_button.setFocusable(false);
+        registerCard_button.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/registerCard_button_click.png"))); // NOI18N
+        registerCard_button.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/registerCard_button_hover.png"))); // NOI18N
+        registerCard_button.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/registerCard_button_selected.png"))); // NOI18N
+        registerCard_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
+                registerCard_buttonActionPerformed(evt);
             }
         });
 
@@ -251,18 +251,18 @@ public class Main_frame extends javax.swing.JFrame  {
             }
         });
 
-        button2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button.png"))); // NOI18N
-        button2.setBorder(null);
-        button2.setBorderPainted(false);
-        button2.setContentAreaFilled(false);
-        button2.setFocusPainted(false);
-        button2.setFocusable(false);
-        button2.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_click.png"))); // NOI18N
-        button2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_hover.png"))); // NOI18N
-        button2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_selected.png"))); // NOI18N
-        button2.addActionListener(new java.awt.event.ActionListener() {
+        cardDetails_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cardDetails_button.png"))); // NOI18N
+        cardDetails_button.setBorder(null);
+        cardDetails_button.setBorderPainted(false);
+        cardDetails_button.setContentAreaFilled(false);
+        cardDetails_button.setFocusPainted(false);
+        cardDetails_button.setFocusable(false);
+        cardDetails_button.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cardDetails_button_click.png"))); // NOI18N
+        cardDetails_button.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cardDetails_button_hover.png"))); // NOI18N
+        cardDetails_button.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cardDetails_button_selected.png"))); // NOI18N
+        cardDetails_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
+                cardDetails_buttonActionPerformed(evt);
             }
         });
 
@@ -298,7 +298,7 @@ public class Main_frame extends javax.swing.JFrame  {
                         .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(singleJourney_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registerCard_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(button3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -307,7 +307,7 @@ public class Main_frame extends javax.swing.JFrame  {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cardDetails_button, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(button4, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
@@ -329,11 +329,11 @@ public class Main_frame extends javax.swing.JFrame  {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(singleJourney_button, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(registerCard_button, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(load_button, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cardDetails_button, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -388,10 +388,10 @@ public class Main_frame extends javax.swing.JFrame  {
                load_button.doClick();
            }
         if(evt.getKeyCode()==KeyEvent.VK_F3){
-               button1.doClick();
+               registerCard_button.doClick();
            }
         if(evt.getKeyCode()==KeyEvent.VK_F4){
-               button2.doClick();
+               cardDetails_button.doClick();
            }
         if(evt.getKeyCode()==KeyEvent.VK_F5){
                button3.doClick();
@@ -414,15 +414,15 @@ public class Main_frame extends javax.swing.JFrame  {
         LC_panel.setVisible(true);
     }//GEN-LAST:event_load_buttonActionPerformed
 
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+    private void registerCard_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerCard_buttonActionPerformed
         deselect_button();
-        button1.setSelected(true);
-    }//GEN-LAST:event_button1ActionPerformed
+        registerCard_button.setSelected(true);
+    }//GEN-LAST:event_registerCard_buttonActionPerformed
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+    private void cardDetails_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardDetails_buttonActionPerformed
         deselect_button();
-        button2.setSelected(true);
-    }//GEN-LAST:event_button2ActionPerformed
+        cardDetails_button.setSelected(true);
+    }//GEN-LAST:event_cardDetails_buttonActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
         deselect_button();
@@ -479,11 +479,10 @@ public class Main_frame extends javax.swing.JFrame  {
     });
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton button1;
-    private javax.swing.JButton button2;
     private javax.swing.JButton button3;
     private javax.swing.JButton button4;
     private javax.swing.JButton button5;
+    private javax.swing.JButton cardDetails_button;
     private javax.swing.JLabel header_label;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu4;
@@ -491,6 +490,7 @@ public class Main_frame extends javax.swing.JFrame  {
     private javax.swing.JButton load_button;
     private javax.swing.JButton logout_button;
     private javax.swing.JPanel main_panel;
+    private javax.swing.JButton registerCard_button;
     private javax.swing.JButton singleJourney_button;
     private javax.swing.JLabel sysTime_label;
     private javax.swing.JLabel sysTime_label1;
