@@ -270,12 +270,13 @@ public class Single_journey extends javax.swing.JPanel {
         if(recievedCash_textField.getText().isEmpty() || destination_comboBox.getSelectedItem()==".."){
             isError=true;
             JOptionPane.showMessageDialog(this, "Please enter all fields.","Error",JOptionPane.ERROR_MESSAGE);
-        }else if(Float.parseFloat(arrDestFare[destination_comboBox.getSelectedIndex()][1])>Float.parseFloat(recievedCash_textField.getText())){
-            isError=true;
-            JOptionPane.showMessageDialog(this, "Insufficient Cash.","Error",JOptionPane.ERROR_MESSAGE);
         }else{
             try{
-            recieved_cash = Float.parseFloat(recievedCash_textField.getText());
+                if(Float.parseFloat(arrDestFare[destination_comboBox.getSelectedIndex()][1])>Float.parseFloat(recievedCash_textField.getText())){
+                    isError=true;
+                    JOptionPane.showMessageDialog(this, "Insufficient Cash.","Error",JOptionPane.ERROR_MESSAGE);
+                }
+                recieved_cash = Float.parseFloat(recievedCash_textField.getText());
             }catch(NumberFormatException e){
                 isError=true;
                 JOptionPane.showMessageDialog(this, "Please enter cash value only.","Error",JOptionPane.ERROR_MESSAGE);

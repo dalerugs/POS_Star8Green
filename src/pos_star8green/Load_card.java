@@ -56,28 +56,44 @@ public class Load_card extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(31, 90, 43));
         jLabel1.setText("LOAD CARD");
 
-        button_200.setText("200");
+        button_200.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_200.PNG"))); // NOI18N
+        button_200.setBorder(null);
+        button_200.setBorderPainted(false);
+        button_200.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_200_click.png"))); // NOI18N
+        button_200.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_200_hover.PNG"))); // NOI18N
         button_200.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_200ActionPerformed(evt);
             }
         });
 
-        button_1000.setText("1000");
+        button_1000.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_1000.PNG"))); // NOI18N
+        button_1000.setBorder(null);
+        button_1000.setBorderPainted(false);
+        button_1000.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_1000_click.png"))); // NOI18N
+        button_1000.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_1000_hover.png"))); // NOI18N
         button_1000.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_1000ActionPerformed(evt);
             }
         });
 
-        button_100.setText("100");
+        button_100.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_100.PNG"))); // NOI18N
+        button_100.setBorder(null);
+        button_100.setBorderPainted(false);
+        button_100.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_100_click.png"))); // NOI18N
+        button_100.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_100_hover.PNG"))); // NOI18N
         button_100.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_100ActionPerformed(evt);
             }
         });
 
-        button_500.setText("500");
+        button_500.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_500.PNG"))); // NOI18N
+        button_500.setBorder(null);
+        button_500.setBorderPainted(false);
+        button_500.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_500_click.png"))); // NOI18N
+        button_500.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/button_500_hover.png"))); // NOI18N
         button_500.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button_500ActionPerformed(evt);
@@ -265,7 +281,6 @@ public class Load_card extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(otherAmount_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,12 +301,13 @@ public class Load_card extends javax.swing.JPanel {
         if(recievedCash_textField.getText().isEmpty() || otherAmount_textField.getText().isEmpty()){
             isError=true;
             JOptionPane.showMessageDialog(this, "Please enter all fields.","Error",JOptionPane.ERROR_MESSAGE);
-        }else if(Float.parseFloat(otherAmount_textField.getText())>Float.parseFloat(recievedCash_textField.getText())){
-            isError=true;
-            JOptionPane.showMessageDialog(this, "Insufficient Cash.","Error",JOptionPane.ERROR_MESSAGE);
-        }else{
-            
+        }
+        else{
             try{
+                if(Float.parseFloat(otherAmount_textField.getText())>Float.parseFloat(recievedCash_textField.getText())){
+                    isError=true;
+                    JOptionPane.showMessageDialog(this, "Insufficient Cash.","Error",JOptionPane.ERROR_MESSAGE);
+                }
                 amount=Float.parseFloat(otherAmount_textField.getText());
                 recieved_cash = Float.parseFloat(recievedCash_textField.getText());
             }catch(NumberFormatException e){
