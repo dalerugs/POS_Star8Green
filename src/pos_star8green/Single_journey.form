@@ -183,9 +183,9 @@
                           </Group>
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="total" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="recieved_cash" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="change" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="total_label" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="recievedCash_label" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="change_label" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -206,11 +206,11 @@
                           <Component id="jLabel9" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="total" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="total_label" min="-2" pref="39" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="recieved_cash" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="recievedCash_label" min="-2" pref="39" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="change" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="change_label" min="-2" pref="39" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -235,7 +235,7 @@
             <Property name="text" type="java.lang.String" value="Total:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="recieved_cash">
+        <Component class="javax.swing.JLabel" name="recievedCash_label">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>
@@ -246,7 +246,7 @@
             <Property name="text" type="java.lang.String" value="100.00"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="change">
+        <Component class="javax.swing.JLabel" name="change_label">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>
@@ -279,7 +279,7 @@
             <Property name="text" type="java.lang.String" value="Change:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="total">
+        <Component class="javax.swing.JLabel" name="total_label">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="24" style="0"/>

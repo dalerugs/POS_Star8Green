@@ -5,6 +5,7 @@
  */
 package pos_star8green;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +19,7 @@ public class Single_journey extends javax.swing.JPanel {
      */
     public Single_journey() {
         initComponents();
+        getDestFare();
         reciept_panel.setVisible(false);
     }
 
@@ -38,11 +40,11 @@ public class Single_journey extends javax.swing.JPanel {
         recievedCash_textField = new javax.swing.JTextField();
         reciept_panel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        recieved_cash = new javax.swing.JLabel();
-        change = new javax.swing.JLabel();
+        recievedCash_label = new javax.swing.JLabel();
+        change_label = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        total = new javax.swing.JLabel();
+        total_label = new javax.swing.JLabel();
         cancel_button = new javax.swing.JButton();
         confirm_button = new javax.swing.JButton();
         ok_button = new javax.swing.JButton();
@@ -76,13 +78,13 @@ public class Single_journey extends javax.swing.JPanel {
         jLabel5.setForeground(new java.awt.Color(52, 52, 52));
         jLabel5.setText("Total:");
 
-        recieved_cash.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        recieved_cash.setForeground(new java.awt.Color(52, 52, 52));
-        recieved_cash.setText("100.00");
+        recievedCash_label.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        recievedCash_label.setForeground(new java.awt.Color(52, 52, 52));
+        recievedCash_label.setText("100.00");
 
-        change.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        change.setForeground(new java.awt.Color(52, 52, 52));
-        change.setText("30.00");
+        change_label.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        change_label.setForeground(new java.awt.Color(52, 52, 52));
+        change_label.setText("30.00");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(52, 52, 52));
@@ -92,9 +94,9 @@ public class Single_journey extends javax.swing.JPanel {
         jLabel9.setForeground(new java.awt.Color(52, 52, 52));
         jLabel9.setText("Change:");
 
-        total.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        total.setForeground(new java.awt.Color(52, 52, 52));
-        total.setText("70.00");
+        total_label.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        total_label.setForeground(new java.awt.Color(52, 52, 52));
+        total_label.setText("70.00");
 
         cancel_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/single_journey_cancel_button.PNG"))); // NOI18N
         cancel_button.setBorder(null);
@@ -136,9 +138,9 @@ public class Single_journey extends javax.swing.JPanel {
                             .addComponent(jLabel9))
                         .addGap(25, 25, 25)
                         .addGroup(reciept_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(total)
-                            .addComponent(recieved_cash)
-                            .addComponent(change))))
+                            .addComponent(total_label)
+                            .addComponent(recievedCash_label)
+                            .addComponent(change_label))))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         reciept_panelLayout.setVerticalGroup(
@@ -153,11 +155,11 @@ public class Single_journey extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(reciept_panelLayout.createSequentialGroup()
-                        .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(total_label, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(recieved_cash, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(recievedCash_label, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(change, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(change_label, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(reciept_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirm_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -225,9 +227,20 @@ public class Single_journey extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void getDestFare(){
+        arrDestFare[0][0]="Destination 1";arrDestFare[0][1]="15.00";
+        arrDestFare[1][0]="Destination 1";arrDestFare[1][1]="15.00";
+        arrDestFare[2][0]="Destination 1";arrDestFare[2][1]="20.00";
+        arrDestFare[3][0]="Destination 1";arrDestFare[3][1]="20.00";
+        arrDestFare[4][0]="Destination 1";arrDestFare[4][1]="25.00";
+        arrDestFare[5][0]="Destination 1";arrDestFare[5][1]="30.00";
+    }
+    
+    
     private void ok_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ok_buttonActionPerformed
         boolean isError=false;
-        float recieved_cash;
+        float recieved_cash=0;
+        float total;
         if(recievedCash_textField.getText().isEmpty()){
             isError=true;
             JOptionPane.showMessageDialog(this, "Please enter recieved cash.","Error",JOptionPane.ERROR_MESSAGE);
@@ -241,8 +254,12 @@ public class Single_journey extends javax.swing.JPanel {
         }
         
         
-        
         if(!isError){
+            total=Float.parseFloat(arrDestFare[destination_comboBox.getSelectedIndex()][1]);
+            float change=recieved_cash-total;
+            total_label.setText(""+total);
+            recievedCash_label.setText(""+recieved_cash);
+            change_label.setText(""+change);
             destination_comboBox.setEnabled(false);
             recievedCash_textField.setEnabled(false);
             ok_button.setEnabled(false);
@@ -254,6 +271,8 @@ public class Single_journey extends javax.swing.JPanel {
         reciept_panel.setVisible(false);
         recievedCash_textField.setText("");
         destination_comboBox.setSelectedIndex(0);
+        recievedCash_textField.setEnabled(true);
+        ok_button.setEnabled(true);
     }//GEN-LAST:event_confirm_buttonActionPerformed
 
     private void cancel_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel_buttonActionPerformed
@@ -266,7 +285,7 @@ public class Single_journey extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel_button;
-    private javax.swing.JLabel change;
+    private javax.swing.JLabel change_label;
     private javax.swing.JButton confirm_button;
     private javax.swing.JComboBox<String> destination_comboBox;
     private javax.swing.JLabel jLabel1;
@@ -278,8 +297,9 @@ public class Single_journey extends javax.swing.JPanel {
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JButton ok_button;
     private javax.swing.JPanel reciept_panel;
+    private javax.swing.JLabel recievedCash_label;
     private javax.swing.JTextField recievedCash_textField;
-    private javax.swing.JLabel recieved_cash;
-    private javax.swing.JLabel total;
+    private javax.swing.JLabel total_label;
     // End of variables declaration//GEN-END:variables
+    String[][] arrDestFare = new String[6][2];
 }

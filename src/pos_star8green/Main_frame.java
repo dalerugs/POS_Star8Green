@@ -499,6 +499,7 @@ public class Main_frame extends javax.swing.JFrame  {
     No_card_detected NCD_error = new No_card_detected();
     Invalid_card IC_error = new Invalid_card();
     Single_journey SJ_panel = new Single_journey() ;
+    
 }
 
 
