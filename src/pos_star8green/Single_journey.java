@@ -21,6 +21,7 @@ public class Single_journey extends javax.swing.JPanel {
         initComponents();
         getDestFare();
         reciept_panel.setVisible(false);
+        fare_label.setText("");
     }
 
     /**
@@ -48,6 +49,8 @@ public class Single_journey extends javax.swing.JPanel {
         cancel_button = new javax.swing.JButton();
         confirm_button = new javax.swing.JButton();
         ok_button = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        fare_label = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(983, 578));
 
@@ -63,6 +66,11 @@ public class Single_journey extends javax.swing.JPanel {
         destination_comboBox.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         destination_comboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Destination 1", "Destination 2", "Destination 3", "Destination 4", "Destination 5", "Destination 6" }));
         destination_comboBox.setBorder(null);
+        destination_comboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                destination_comboBoxItemStateChanged(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(52, 52, 52));
@@ -178,52 +186,64 @@ public class Single_journey extends javax.swing.JPanel {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(52, 52, 52));
+        jLabel6.setText("Fare:");
+
+        fare_label.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        fare_label.setForeground(new java.awt.Color(52, 52, 52));
+        fare_label.setText("70.00");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(316, Short.MAX_VALUE)
-                .addComponent(reciept_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(262, 262, 262))
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(423, 423, 423)
-                        .addComponent(ok_button))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel2)
-                                .addGap(6, 6, 6)
-                                .addComponent(destination_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(6, 6, 6)
-                            .addComponent(recievedCash_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jLabel2)
+                .addGap(6, 6, 6)
+                .addComponent(destination_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(jLabel6)
+                .addGap(239, 239, 239)
+                .addComponent(fare_label))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(jLabel3)
+                .addGap(6, 6, 6)
+                .addComponent(recievedCash_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(463, 463, 463)
+                .addComponent(ok_button))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(317, 317, 317)
+                .addComponent(reciept_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(destination_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fare_label, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(recievedCash_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addComponent(ok_button)
-                .addGap(44, 44, 44)
-                .addComponent(reciept_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(53, 53, 53)
+                .addComponent(reciept_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -271,6 +291,7 @@ public class Single_journey extends javax.swing.JPanel {
         reciept_panel.setVisible(false);
         recievedCash_textField.setText("");
         destination_comboBox.setSelectedIndex(0);
+        fare_label.setText("");
         recievedCash_textField.setEnabled(true);
         ok_button.setEnabled(true);
     }//GEN-LAST:event_confirm_buttonActionPerformed
@@ -282,16 +303,22 @@ public class Single_journey extends javax.swing.JPanel {
         ok_button.setEnabled(true);
     }//GEN-LAST:event_cancel_buttonActionPerformed
 
+    private void destination_comboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_destination_comboBoxItemStateChanged
+        fare_label.setText(arrDestFare[destination_comboBox.getSelectedIndex()][1]);
+    }//GEN-LAST:event_destination_comboBoxItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cancel_button;
     private javax.swing.JLabel change_label;
     private javax.swing.JButton confirm_button;
     private javax.swing.JComboBox<String> destination_comboBox;
+    private javax.swing.JLabel fare_label;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPopupMenu jPopupMenu1;
