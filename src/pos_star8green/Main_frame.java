@@ -34,7 +34,7 @@ public class Main_frame extends javax.swing.JFrame  {
     
     
     private void initialize(){
-        
+//        Set Icon
         this.setIconImage(new ImageIcon(this.getClass().getResource("/Images/star8green_icon.png")).getImage());
         
 //        Make the frame fullscreen
@@ -79,6 +79,7 @@ public class Main_frame extends javax.swing.JFrame  {
         button5.setSelected(false);
     }
     
+//    Hide All Panels
     private void hide_panels(){
         SJ_panel.setVisible(false);
         LC_panel.setVisible(false);
