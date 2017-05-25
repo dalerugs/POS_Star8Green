@@ -334,6 +334,7 @@ public class Single_journey extends javax.swing.JPanel {
             fare_label.setText(arrDestFare[destination_comboBox.getSelectedIndex()][1]);
         }catch(ArrayIndexOutOfBoundsException ex){
             JOptionPane.showMessageDialog(this, "Please select destination.","Error",JOptionPane.ERROR_MESSAGE);
+            fare_label.setText("");
         }
         
     }//GEN-LAST:event_destination_comboBoxItemStateChanged
