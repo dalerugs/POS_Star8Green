@@ -277,7 +277,7 @@ public class Load_card extends javax.swing.JPanel {
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(otherAmount_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(recievedCash_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -351,6 +351,8 @@ public class Load_card extends javax.swing.JPanel {
         button_500.setEnabled(true);
         button_200.setEnabled(true);
         button_100.setEnabled(true);
+        Main_frame.hide_panels();
+        Main_frame.deselect_button();
     }//GEN-LAST:event_confirm_buttonActionPerformed
 
     private void button_1000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_1000ActionPerformed

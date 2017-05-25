@@ -311,13 +311,15 @@ public class Single_journey extends javax.swing.JPanel {
     }//GEN-LAST:event_ok_buttonActionPerformed
 
     private void confirm_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_buttonActionPerformed
+        isConfirm=true;
         reciept_panel.setVisible(false);
         recievedCash_textField.setText("");
         fare_label.setText("");
         destination_comboBox.setEnabled(true);
         recievedCash_textField.setEnabled(true);
         ok_button.setEnabled(true);
-        destination_comboBox.setSelectedIndex(0);
+        destination_comboBox.setSelectedIndex(-1);
+        isConfirm=false;
         Main_frame.hide_panels();
         Main_frame.deselect_button();
     }//GEN-LAST:event_confirm_buttonActionPerformed
@@ -333,7 +335,9 @@ public class Single_journey extends javax.swing.JPanel {
         try{
             fare_label.setText(arrDestFare[destination_comboBox.getSelectedIndex()][1]);
         }catch(ArrayIndexOutOfBoundsException ex){
-            JOptionPane.showMessageDialog(this, "Please select destination.","Error",JOptionPane.ERROR_MESSAGE);
+            if(!isConfirm){
+                JOptionPane.showMessageDialog(this, "Please select destination.","Error",JOptionPane.ERROR_MESSAGE);
+            }
             fare_label.setText("");
         }
         
@@ -361,4 +365,5 @@ public class Single_journey extends javax.swing.JPanel {
     private javax.swing.JLabel total_label;
     // End of variables declaration//GEN-END:variables
     String[][] arrDestFare;
+    boolean isConfirm=false;
 }
