@@ -69,7 +69,7 @@ public class Main_frame extends javax.swing.JFrame  {
     }
     
 //    Deselect All Buttons
-    private void deselect_button(){
+    public static void deselect_button(){
         singleJourney_button.setSelected(false);
         load_button.setSelected(false);
         registerCard_button.setSelected(false);
@@ -80,7 +80,7 @@ public class Main_frame extends javax.swing.JFrame  {
     }
     
 //    Hide All Panels
-    private void hide_panels(){
+    public static void hide_panels(){
         SJ_panel.setVisible(false);
         LC_panel.setVisible(false);
         NCD_error.setVisible(false);
@@ -480,29 +480,29 @@ public class Main_frame extends javax.swing.JFrame  {
     });
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton button3;
-    private javax.swing.JButton button4;
-    private javax.swing.JButton button5;
-    private javax.swing.JButton cardDetails_button;
+    public static javax.swing.JButton button3;
+    public static javax.swing.JButton button4;
+    public static javax.swing.JButton button5;
+    public static javax.swing.JButton cardDetails_button;
     private javax.swing.JLabel header_label;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JButton load_button;
-    private javax.swing.JButton logout_button;
+    public static javax.swing.JButton load_button;
+    public static javax.swing.JButton logout_button;
     private javax.swing.JPanel main_panel;
-    private javax.swing.JButton registerCard_button;
-    private javax.swing.JButton singleJourney_button;
+    public static javax.swing.JButton registerCard_button;
+    public static javax.swing.JButton singleJourney_button;
     private javax.swing.JLabel sysTime_label;
     private javax.swing.JLabel sysTime_label1;
     private javax.swing.JLabel sysTime_label2;
     // End of variables declaration//GEN-END:variables
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMM d, u | H:mm:ss a");
     GridBagLayout layout = new GridBagLayout();
-    No_card_detected NCD_error = new No_card_detected();
-    Invalid_card IC_error = new Invalid_card();
-    Single_journey SJ_panel = new Single_journey();
-    Load_card LC_panel = new Load_card();
+    public static No_card_detected NCD_error = new No_card_detected();
+    public static Invalid_card IC_error = new Invalid_card();
+    public static Single_journey SJ_panel = new Single_journey();
+    public static Load_card LC_panel = new Load_card();
     
 }
 

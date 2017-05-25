@@ -5,6 +5,7 @@
  */
 package pos_star8green;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -192,36 +193,40 @@ public class Single_journey extends javax.swing.JPanel {
 
         fare_label.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         fare_label.setForeground(new java.awt.Color(52, 52, 52));
-        fare_label.setText("70.00");
+        fare_label.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        fare_label.setText("15");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jLabel2)
-                .addGap(6, 6, 6)
-                .addComponent(destination_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(jLabel6)
-                .addGap(239, 239, 239)
-                .addComponent(fare_label))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(jLabel3)
-                .addGap(6, 6, 6)
-                .addComponent(recievedCash_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(463, 463, 463)
-                .addComponent(ok_button))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(317, 317, 317)
-                .addComponent(reciept_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel2)
+                        .addGap(6, 6, 6)
+                        .addComponent(destination_comboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(210, 210, 210)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fare_label, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel3)
+                        .addGap(6, 6, 6)
+                        .addComponent(recievedCash_textField, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(463, 463, 463)
+                        .addComponent(ok_button))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(317, 317, 317)
+                        .addComponent(reciept_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(203, 203, 203))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -248,13 +253,20 @@ public class Single_journey extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void getDestFare(){
-        arrDestFare[0][0]="..";arrDestFare[0][1]="";
-        arrDestFare[1][0]="Destination 1";arrDestFare[1][1]="15.00";
-        arrDestFare[2][0]="Destination 2";arrDestFare[2][1]="15.00";
-        arrDestFare[3][0]="Destination 3";arrDestFare[3][1]="20.00";
-        arrDestFare[4][0]="Destination 4";arrDestFare[4][1]="20.00";
-        arrDestFare[5][0]="Destination 5";arrDestFare[5][1]="25.00";
-        arrDestFare[6][0]="Destination 6";arrDestFare[6][1]="30.00";
+//        arrDestFare[0][0]="..";arrDestFare[0][1]="";
+//        arrDestFare[1][0]="Destination 1";arrDestFare[1][1]="15.00";
+//        arrDestFare[2][0]="Destination 2";arrDestFare[2][1]="15.00";
+//        arrDestFare[3][0]="Destination 3";arrDestFare[3][1]="20.00";
+//        arrDestFare[4][0]="Destination 4";arrDestFare[4][1]="20.00";
+//        arrDestFare[5][0]="Destination 5";arrDestFare[5][1]="25.00";
+//        arrDestFare[6][0]="Destination 6";arrDestFare[6][1]="30.00";
+
+        try{
+            arrDestFare = new Database().getDestinations();
+        }catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "An error has occured:\n" + ex + "\n\nPlease contact your administrator.","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        
         
         for (String[] arrDestFare1 : arrDestFare) {
             destination_comboBox.addItem(arrDestFare1[0]);
@@ -267,7 +279,7 @@ public class Single_journey extends javax.swing.JPanel {
     private void ok_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ok_buttonActionPerformed
         boolean isError=false;
         float recieved_cash=0;
-        if(recievedCash_textField.getText().isEmpty() || destination_comboBox.getSelectedItem()==".."){
+        if(recievedCash_textField.getText().isEmpty() || destination_comboBox.getSelectedIndex()==-1){
             isError=true;
             JOptionPane.showMessageDialog(this, "Please enter all fields.","Error",JOptionPane.ERROR_MESSAGE);
         }else{
@@ -291,10 +303,10 @@ public class Single_journey extends javax.swing.JPanel {
             total_label.setText(""+total);
             recievedCash_label.setText(""+recieved_cash);
             change_label.setText(""+change);
-            destination_comboBox.setEnabled(false);
             recievedCash_textField.setEnabled(false);
             ok_button.setEnabled(false);
             reciept_panel.setVisible(true);
+            destination_comboBox.setEnabled(false);
         }
     }//GEN-LAST:event_ok_buttonActionPerformed
 
@@ -306,6 +318,8 @@ public class Single_journey extends javax.swing.JPanel {
         recievedCash_textField.setEnabled(true);
         ok_button.setEnabled(true);
         destination_comboBox.setSelectedIndex(0);
+        Main_frame.hide_panels();
+        Main_frame.deselect_button();
     }//GEN-LAST:event_confirm_buttonActionPerformed
 
     private void cancel_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel_buttonActionPerformed
@@ -316,7 +330,12 @@ public class Single_journey extends javax.swing.JPanel {
     }//GEN-LAST:event_cancel_buttonActionPerformed
 
     private void destination_comboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_destination_comboBoxItemStateChanged
-        fare_label.setText(arrDestFare[destination_comboBox.getSelectedIndex()][1]);
+        try{
+            fare_label.setText(arrDestFare[destination_comboBox.getSelectedIndex()][1]);
+        }catch(ArrayIndexOutOfBoundsException ex){
+            JOptionPane.showMessageDialog(this, "Please select destination.","Error",JOptionPane.ERROR_MESSAGE);
+        }
+        
     }//GEN-LAST:event_destination_comboBoxItemStateChanged
 
 
@@ -340,5 +359,5 @@ public class Single_journey extends javax.swing.JPanel {
     private javax.swing.JTextField recievedCash_textField;
     private javax.swing.JLabel total_label;
     // End of variables declaration//GEN-END:variables
-    String[][] arrDestFare = new String[7][2];
+    String[][] arrDestFare;
 }

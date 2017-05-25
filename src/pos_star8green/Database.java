@@ -25,4 +25,17 @@ public class Database {
         rs.last();
         return rs.getRow()>0;
     }
+    
+    public String[][] getDestinations() throws SQLException{
+        String query="SELECT * FROM destinations ORDER BY destination ASC";
+        ResultSet rs=DriverManager.getConnection(dburl,dbuser,dbpass).createStatement().executeQuery(query);
+        rs.last();
+        String[][] dest = new String[rs.getRow()+1][2];
+        rs.beforeFirst();
+        while(rs.next()){
+            dest[rs.getRow()][0]=rs.getString("destination");
+            dest[rs.getRow()][1]=rs.getString("fare")+".00";
+        }
+        return dest;
+    }
 }
