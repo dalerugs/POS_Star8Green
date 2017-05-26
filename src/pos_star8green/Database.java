@@ -11,10 +11,13 @@ import java.sql.*;
  *
  * @author Patrick Dale
  */
-public class Database {
+    public class Database {
+//        Online testing server
     String dburl="jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12175914";
     String dbuser="sql12175914";
     String dbpass="uk1jbKXu75";
+    
+//    localhost testing server
 //    String dburl="jdbc:mysql://localhost:3306/star8pos";
 //    String dbuser="root";
 //    String dbpass="";

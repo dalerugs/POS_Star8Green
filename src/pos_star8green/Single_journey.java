@@ -277,6 +277,7 @@ public class Single_journey extends javax.swing.JPanel {
     
     
     private void ok_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ok_buttonActionPerformed
+//        Validate all inputs
         boolean isError=false;
         float recieved_cash=0;
         if(recievedCash_textField.getText().isEmpty() || destination_comboBox.getSelectedIndex()==-1){
@@ -295,7 +296,7 @@ public class Single_journey extends javax.swing.JPanel {
                 recievedCash_textField.setText("");
             }
         }
-        
+//        end Validate all inputs
         
         if(!isError){
             float total=Float.parseFloat(arrDestFare[destination_comboBox.getSelectedIndex()][1]);

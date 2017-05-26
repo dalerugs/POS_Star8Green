@@ -62,10 +62,9 @@ public class Main_frame extends javax.swing.JFrame  {
         main_panel.add(IC_error);
         main_panel.add(SJ_panel);
         main_panel.add(LC_panel);
-        NCD_error.setVisible(true);
-        IC_error.setVisible(false);
-        SJ_panel.setVisible(false);
-        LC_panel.setVisible(false);
+        main_panel.add(RC_panel);
+        main_panel.add(CD_panel);
+        hide_panels();
     }
     
 //    Deselect All Buttons
@@ -85,6 +84,8 @@ public class Main_frame extends javax.swing.JFrame  {
         LC_panel.setVisible(false);
         NCD_error.setVisible(false);
         IC_error.setVisible(false);
+        RC_panel.setVisible(false);
+        CD_panel.setVisible(false);
     }
     
     
@@ -134,7 +135,8 @@ public class Main_frame extends javax.swing.JFrame  {
         sysTime_label1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         sysTime_label2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        sysTime_label2.setText("F1 - Single Journey | \nF2 - Load | \nF3 - Button1 | \nF4 - Button2 | \nF5 - Button3 | \nF6 - Button4 | \nF7 - Button5 | \nF8 - Logout");
+        sysTime_label2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sysTime_label2.setText("F1 - Single Journey | \nF2 - Load | \nF3 - Register Card | \nF4 - Card Details | \nF5 - Button3 | \nF6 - Button4 | \nF7 - Button5 | \nF8 - Logout");
         sysTime_label2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         sysTime_label.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -288,11 +290,11 @@ public class Main_frame extends javax.swing.JFrame  {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(header_label, javax.swing.GroupLayout.DEFAULT_SIZE, 1368, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(sysTime_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sysTime_label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sysTime_label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(sysTime_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sysTime_label, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(sysTime_label, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -370,8 +372,8 @@ public class Main_frame extends javax.swing.JFrame  {
 
     private void singleJourney_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_singleJourney_buttonActionPerformed
         deselect_button();
-        singleJourney_button.setSelected(true);
         hide_panels();
+        singleJourney_button.setSelected(true);
         SJ_panel.setVisible(true);
         
     }//GEN-LAST:event_singleJourney_buttonActionPerformed
@@ -410,19 +412,24 @@ public class Main_frame extends javax.swing.JFrame  {
 
     private void load_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_load_buttonActionPerformed
         deselect_button();
-        load_button.setSelected(true);
         hide_panels();
+        load_button.setSelected(true);
         LC_panel.setVisible(true);
     }//GEN-LAST:event_load_buttonActionPerformed
 
     private void registerCard_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerCard_buttonActionPerformed
         deselect_button();
+        hide_panels();
         registerCard_button.setSelected(true);
+        RC_panel.setVisible(true);
+        
     }//GEN-LAST:event_registerCard_buttonActionPerformed
 
     private void cardDetails_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardDetails_buttonActionPerformed
         deselect_button();
+        hide_panels();
         cardDetails_button.setSelected(true);
+        CD_panel.setVisible(true);
     }//GEN-LAST:event_cardDetails_buttonActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
@@ -497,13 +504,14 @@ public class Main_frame extends javax.swing.JFrame  {
     private javax.swing.JLabel sysTime_label1;
     private javax.swing.JLabel sysTime_label2;
     // End of variables declaration//GEN-END:variables
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MMM d, u | H:mm:ss a");
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("EEEE, MMM d, u | h:mm:ss a");
     GridBagLayout layout = new GridBagLayout();
     public static No_card_detected NCD_error = new No_card_detected();
     public static Invalid_card IC_error = new Invalid_card();
     public static Single_journey SJ_panel = new Single_journey();
     public static Load_card LC_panel = new Load_card();
-    
+    public static Register_card RC_panel = new Register_card();
+    public static Card_details CD_panel = new Card_details();
 }
 
 
